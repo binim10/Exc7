@@ -20,7 +20,7 @@ public class Mp3FileDetails extends FileDetails {
     }
 
     @Override
-    void accept(FileVisitor fv) {
+    public void accept(FileVisitor fv) {
         fv.visit(this);
     }
 }

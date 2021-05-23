@@ -25,5 +25,5 @@ public abstract class FileDetails {
         return path;
     }
 
-    abstract void accept(FileVisitor fv);
+    public abstract void accept(FileVisitor fv);
 }

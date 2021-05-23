@@ -5,7 +5,7 @@ import FileSystem.Visitor.FileVisitor;
 
 public class FileCountVisitor implements FileVisitor {
 
-    int totalFiles = 0;
+    public int totalFiles = 0;
 
 
     @Override

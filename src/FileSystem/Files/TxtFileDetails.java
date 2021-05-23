@@ -19,7 +19,7 @@ public class TxtFileDetails extends FileDetails {
     }
 
     @Override
-    void accept(FileVisitor fv) {
+    public void accept(FileVisitor fv) {
         fv.visit(this);
     }
 }

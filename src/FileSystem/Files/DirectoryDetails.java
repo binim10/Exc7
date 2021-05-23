@@ -12,7 +12,7 @@ public class DirectoryDetails extends FileDetails {
     }
 
     @Override
-    void accept(FileVisitor fv) {
+    public void accept(FileVisitor fv) {
 
         for( FileDetails fd : files){
             fd.accept(fv);
