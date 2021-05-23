@@ -3,6 +3,8 @@ import FileSystem.Files.DirectoryDetails;
 import FileSystem.Files.FileDetails;
 import FileSystem.Files.FileDetailsFactory;
 import FileSystem.Visitor.FileCountVisitor;
+import FileSystem.Visitor.ShortPrint;
+import FileSystem.Visitor.SizeCalculator;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -54,16 +56,19 @@ public class Main {
                 case "c":
                     FileCountVisitor fc = new FileCountVisitor();
                     root.accept(fc);
-                    System.out.println(fc.totalFiles);
+                    System.out.println("Found " + fc.totalFiles + " files");
                     break;
                 case "sz":
-                    //TODO: Add size calculation behavior
+                    SizeCalculator sc = new SizeCalculator();
+                    root.accept(sc);
+                    System.out.println("the total size is " + sc.sizeBite + " bytes");
                     break;
                 case "st":
                     //TODO: Add statistics behavior
                     break;
                 case "sh":
-                    //TODO: Add short representation behavior
+                    ShortPrint sp = new ShortPrint();
+                    root.accept(sp);
             }
         }
     }

@@ -4,7 +4,7 @@ import FileSystem.Files.*;
 
 public class SizeCalculator implements FileVisitor{
 
-    int sizeBite = 0;
+    public int sizeBite = 0;
 
     @Override
     public void visit(TxtFileDetails txt) {

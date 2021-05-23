@@ -39,7 +39,5 @@ public class FileCountVisitor implements FileVisitor {
     }
 
     @Override
-    public void visit(DirectoryDetails directory) {
-
-    }
+    public void visit(DirectoryDetails directory) {}
 }
