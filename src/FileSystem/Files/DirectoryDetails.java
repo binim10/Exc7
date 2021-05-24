@@ -4,9 +4,13 @@ import FileSystem.Visitor.FileVisitor;
 
 import java.util.ArrayList;
 
-// TODO: Implement Composite (change this file).
 public class DirectoryDetails extends FileDetails {
     ArrayList<FileDetails> files= new ArrayList<>();
+
+    public ArrayList<FileDetails> getFiles() {
+        return files;
+    }
+
     public DirectoryDetails(String path, String name){
         super(path,name);
     }

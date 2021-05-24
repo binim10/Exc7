@@ -5,8 +5,15 @@ import FileSystem.Visitor.FileVisitor;
 
 public class FileCountVisitor implements FileVisitor {
 
-    public int totalFiles = 0;
+    private int totalFiles = 0;
 
+    public int getTotalFiles() {
+        return totalFiles;
+    }
+
+    public void setTotalFiles(int totalFiles) {
+        this.totalFiles = totalFiles;
+    }
 
     @Override
     public void visit(TxtFileDetails txt) {
