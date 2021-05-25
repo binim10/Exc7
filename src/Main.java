@@ -6,6 +6,10 @@ import FileSystem.Visitor.FileCountVisitor;
 import FileSystem.Visitor.ShortPrint;
 import FileSystem.Visitor.SizeCalculator;
 import FileSystem.Visitor.Statistics;
+import HamburgersSystem.Decorator.HamburgerDecorator;
+import HamburgersSystem.Hamburgers.Hamburger;
+import HamburgersSystem.Hamburgers.HamburgerFactory;
+import HamburgersSystem.Hamburgers.HamburgerToppingFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -27,9 +31,9 @@ public class Main {
         if (choice.equals("f")) {
             fileMenu(scanner);
         }
-       /* if (choice.equals("h")){
+        if (choice.equals("h")){
             hamburgerMenu(scanner);
-        }*/
+        }
     }
 
     public static FileDetails readFileDetails(String path) throws IOException {
@@ -77,16 +81,16 @@ public class Main {
         }
     }
 
-   /* public static void hamburgerMenu(Scanner scanner){
+    public static void hamburgerMenu(Scanner scanner){
         System.out.println("Choose from the following hamburgers:\n" +
                 "cl: classic\n" +
                 "sp: spicy\n" +
                 "la: lamb\n" +
                 "hm: homemade");
-        // TODO: Add a Hamburger Factory and use it to create a Hamburger
-        Hamburger hamburger = null;
+        String choice = scanner.nextLine();
+        Hamburger hamburger = HamburgerFactory.createHamburger(choice);
 
-        String choice="";
+        choice="";
         while (!choice.equals("s")) {
             System.out.println("Choose from the following options:\n" +
                     "a: add topping\n" +
@@ -109,7 +113,7 @@ public class Main {
                 "or: onion rings\n" +
                 "sa: salad\n" +
                 "fe: friedEgg");
-        // TODO: Add a Hamburger-Topping Factory and use it to create a decorated Hamburger
-        return null;
-    }*/
+        String choice = scanner.nextLine();
+        return HamburgerToppingFactory.createToppingHamburger(choice,hamburger);
+    }
 }
