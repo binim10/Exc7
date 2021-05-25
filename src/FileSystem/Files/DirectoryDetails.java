@@ -7,8 +7,16 @@ import java.util.ArrayList;
 public class DirectoryDetails extends FileDetails {
     ArrayList<FileDetails> files= new ArrayList<>();
 
-    public ArrayList<FileDetails> getFiles() {
-        return files;
+    public int getNumOfFiles() {
+        int count = 0;
+        for(FileDetails fileDetails : files){
+            if(fileDetails.getClass() != DirectoryDetails.class)
+                count += 1;
+            else{
+              count +=  ((DirectoryDetails) fileDetails).getNumOfFiles() ;
+            }
+        }
+        return count;
     }
 
     public DirectoryDetails(String path, String name){
